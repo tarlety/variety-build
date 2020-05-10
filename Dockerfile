@@ -11,7 +11,7 @@ VOLUME /packages/variety/src
 VOLUME /secret
 
 RUN mkdir -p /packages/variety/deb
-COPY src/variety /packages/variety/src
+COPY variety /packages/variety/src
 
 WORKDIR /packages/variety/src
 CMD ["/bin/bash", "-c", "gpg --import /secret/key.sec && debuild -S -sa && mv ../variety_* ../deb"]
